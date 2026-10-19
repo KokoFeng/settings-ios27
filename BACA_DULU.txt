@@ -1,0 +1,5 @@
+Tambahan Software Update iOS 27.
+1) unzip -o Patch_SoftwareUpdate.zip -d /sdcard/Download/ios27set
+2) cd /sdcard/Download/ios27set
+3) sed -i 's/action = pg("swupdate")/action = { it.push(SoftwareUpdateScreen(it)) }/' app/src/main/java/com/ios27/settings/Catalog.kt
+4) grep -n "SoftwareUpdateScreen" app/src/main/java/com/ios27/settings/Catalog.kt   (harus muncul 1 baris)

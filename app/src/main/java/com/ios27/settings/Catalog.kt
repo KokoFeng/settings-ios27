@@ -113,7 +113,7 @@ object Catalog {
     fun general(act: MainActivity): List<List<Entry>> = listOf(
         listOf(
             Entry("About", g("i"), action = { it.push(AboutScreen(it)) }),
-            Entry("Software Update", g("⟳"), action = pg("swupdate")),
+            Entry("Software Update", g("⟳"), action = { it.push(SoftwareUpdateScreen(it)) }),
             Entry("iPhone Storage", g("▤"), action = { it.push(StorageScreen(it)) })
         ),
         listOf(Entry("AppleCare & Warranty", Tile(blue, glyph = "✓"), action = { Sys.open(it, Settings.ACTION_DEVICE_INFO_SETTINGS) })),
