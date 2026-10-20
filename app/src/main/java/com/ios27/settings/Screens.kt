@@ -90,7 +90,7 @@ class HomeScreen(act: MainActivity) : Screen(act) {
         profileHolder = LinearLayout(act).apply { orientation = LinearLayout.VERTICAL }
         col.addView(profileHolder)
         renderProfile()
-        renderGroups(act, col, Catalog.home(act), refreshers)
+        renderGroups(act, col, Catalog.home(act), refreshers); col.addView(supportCard(act))
         val main = scroll(act, col)
         root.addView(main, FrameLayout.LayoutParams(-1, -1))
 

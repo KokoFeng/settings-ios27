@@ -225,7 +225,7 @@ class AppleIdScreen(act: MainActivity) : Screen(act) {
         head.addView(av, LinearLayout.LayoutParams(act.dp(100f), act.dp(100f)))
         head.addView(TextView(act).apply { text = "EDIT"; textSize = 10f; setTextColor(Theme.sub); gravity = Gravity.CENTER; setOnClickListener { act.pickPhoto() } })
         head.addView(TextView(act).apply {
-            text = Profile.name(act); textSize = 24f; typeface = Typeface.DEFAULT_BOLD; setTextColor(Theme.text); setPadding(0, act.dp(8f), 0, 0)
+            text = Profile.name(act); gravity = Gravity.CENTER; textSize = 24f; typeface = Typeface.DEFAULT_BOLD; setTextColor(Theme.text); setPadding(0, act.dp(8f), 0, 0)
         })
         if (Profile.email(act).isNotEmpty()) head.addView(TextView(act).apply { text = Profile.email(act); textSize = 15f; setTextColor(Theme.sub) })
         body.addView(head)
@@ -245,7 +245,7 @@ class AppleIdScreen(act: MainActivity) : Screen(act) {
             )
         ), refreshers)
         // perangkat ini
-        val dev = act.card()
+        body.addView(supportCard(act)); val dev = act.card()
         val row = LinearLayout(act).apply { orientation = LinearLayout.HORIZONTAL; gravity = Gravity.CENTER_VERTICAL; setPadding(act.dp(16f), act.dp(10f), act.dp(14f), act.dp(10f)) }
         row.addView(TileView(act, Tile(0xFF3A3A3C.toInt(), glyph = "▯"), 36f), LinearLayout.LayoutParams(act.dp(36f), act.dp(36f)).apply { rightMargin = act.dp(14f) })
         val tx = LinearLayout(act).apply { orientation = LinearLayout.VERTICAL }
