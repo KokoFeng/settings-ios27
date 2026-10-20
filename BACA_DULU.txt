@@ -1,9 +1,3 @@
-Support Developer (2 tempat) + perbaikan nama di layar Apple ID.
-Jalankan satu per satu di folder proyek (cd /sdcard/Download/ios27set):
-
-unzip -o Patch_Support.zip -d /sdcard/Download/ios27set
-sed -i 's/renderGroups(act, col, Catalog.home(act), refreshers)/renderGroups(act, col, Catalog.home(act), refreshers); col.addView(supportCard(act))/' app/src/main/java/com/ios27/settings/Screens.kt
-sed -i 's/val dev = act.card()/body.addView(supportCard(act)); val dev = act.card()/' app/src/main/java/com/ios27/settings/Account.kt
-sed -i 's/text = Profile.name(act); textSize = 24f;/text = Profile.name(act); gravity = Gravity.CENTER; textSize = 24f;/' app/src/main/java/com/ios27/settings/Account.kt
-sed -i 's/text = Profile.email(act); textSize = 15f;/text = Profile.email(act); gravity = Gravity.CENTER; textSize = 15f;/' app/src/main/java/com/ios27/settings/Account.kt
-grep -c "supportCard" app/src/main/java/com/ios27/settings/Screens.kt app/src/main/java/com/ios27/settings/Account.kt
+Ikon baru Settings iOS 27.
+unzip -o Patch_Ikon.zip -d /sdcard/Download/ios27set
+lalu git add . ; git commit ; git push -f origin main
